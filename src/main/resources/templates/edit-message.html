@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit message</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <form id="edit-message-form" th:action="@{/updatemessage/{id}(id=${message.id})}" th:object="${message}" method="post">
+        <label for="userName">User name: </label>
+        <input id="userName" name="userName" th:field="*{userName}" >
+        <label for="message">Message: </label>
+        <input id="message" name="messageText" th:field="*{messageText}" >
+        <label for="message">Date: </label>
+        <input id="date" name="dateToParse" type="date" th:value="${#dates.format(message.date, 'yyyy-MM-dd')}" >
+
+        <input type="submit" value="update" class="form-item">
+    </form>
+</body>
+</html>

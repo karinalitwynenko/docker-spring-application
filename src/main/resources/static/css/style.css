@@ -1,0 +1,141 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoutbox {
+    position: relative;
+    background-color: #fbfcf7;
+    border: #104872d6 solid 2px;
+    border-radius: 3px;
+    height: 70%;
+    width: 50%;
+    padding-top: 2%;
+}
+
+#send-message {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    height: 10%;
+    margin: 2% 1% 1% 0%;
+    padding-top: 2%;
+    border-top: #10487254 solid 1px;
+}
+
+.form-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+input[type=submit] {
+    box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    background-color: #007dc1;
+    border-radius: 3px;
+    border: 1px solid #124d77;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #154682;
+}
+
+input[type=submit]:hover {
+    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    background-color:#0061a7;
+}
+
+input[type=submit]:active {
+    position:relative;
+    top:1px;
+}
+
+.row {
+    display: flex;
+    background-color: #f6f6f6;
+    color: #1c1c1c;
+    margin: 5px;
+    border: 1px solid #d4d4d4;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+.row div {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.message-details {
+    width: 20%;
+    padding-left: 1%;
+    padding-right: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #3374b9;
+}
+
+.message-text {
+    background-color: #ffffff;
+    flex-grow: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#messages-container {
+    height: 84%;
+    overflow: auto;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 3%;
+}
+
+.message-edit-actions {
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+}
+
+#edit-message-form {
+    width:60%;
+    padding: 6%;
+    border-radius: 1vw;
+    background-color: #fcfcfc;
+    box-shadow: 12px 14px 10px #f1f1f1;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

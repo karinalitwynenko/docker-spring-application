@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoutbox</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <div th:switch="${messages}" class="shoutbox">
+        <div id="messages-container">
+                <div th:case="null"></div>
+                <div th:case="*">
+                    <div th:each="message : ${messages}" class="row">
+                        <div class="message-details">
+                            <div th:text="${message.userName}" class="user-name"></div>
+                            <div th:text="${#dates.format(message.date, 'dd-MM-yyyy')}"></div>
+                        </div>
+                        <div th:text="${message.messageText}" class="message-text"></div>
+                        <div class="message-edit-actions">
+                            <a th:href="@{/editmessage/{id}(id=${message.id})}">edit</a>
+                            <a th:href="@{/deletemessage/{id}(id=${message.id})}">delete</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <form id="send-message" th:action="@{/addmessage}" th:object="${message}" method="post">
+            <input placeholder="Your name..." id="userName" name="userName" class="form-item">
+            <input placeholder="Your message..." id="message" name="messageText" class="form-item">
+            <input type="submit" value="send" class="form-item">
+        </form>
+    </div>
+</body>
+</html>
