@@ -2,14 +2,15 @@ FROM openjdk:jdk-alpine
 LABEL maintainer="karina.litwynenko@pollub.edu.pl"
 
 # zainstaluj Mavena
-RUN apt-get install maven
+RUN apk add --update maven
 ADD .mvn /javaApp.mvn/
 ADD mvnw pom.xml /javaApp/
 ADD src /javaApp/src/
-WORKDIR /javaApp
+WORKDIR /javaApp/
 
 # zbuduj projekt
-RUN mvn clean install
+RUN mvn clean install -DskipTests
 # wystaw port
 EXPOSE 8080
-CMD ["java", "-cp", "target/*", "com.klitwynenko.shoutbox.ShoutboxApplication"]
+CMD ["java", "-jar", "target/shoutbox-0.0.1-SNAPSHOT.jar"]
+#CMD ["sleep 25; java -jar target/shoutbox-0.0.1-SNAPSHOT.jar"]

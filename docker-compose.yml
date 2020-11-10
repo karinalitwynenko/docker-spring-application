@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   server:
-    dockerfile: .
+    build: .
     container_name: javaApp
     ports:
       - "8080:8080"
@@ -9,15 +9,16 @@ services:
       - Bridge-Zadanie-1
     depends_on:
       - database
+    restart: unless-stopped
 
   database:
     image: mysql
     container_name: Full2020_086349
     environment:
       MYSQL_DATABASE: shoutbox
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: klitwynenko
       MYSQL_USER: klitwynenko
-      MYSQL_PASSWORD:
+      MYSQL_PASSWORD: klitwynenko
       MYSQL_TCP_PORT: 3306
     ports:
       - "3306:3306"
