@@ -13,4 +13,3 @@ RUN mvn clean install -DskipTests
 # wystaw port
 EXPOSE 8080
 CMD ["java", "-jar", "target/shoutbox-0.0.1-SNAPSHOT.jar"]
-#CMD ["sleep 25; java -jar target/shoutbox-0.0.1-SNAPSHOT.jar"]

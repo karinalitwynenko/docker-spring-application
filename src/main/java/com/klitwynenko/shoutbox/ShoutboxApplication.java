@@ -20,6 +20,9 @@ public class ShoutboxApplication {
 
     @Bean
     public ApplicationRunner initializer(MessageRepository repository) {
+        if(repository.findAll().iterator().hasNext())
+            return args -> {};
+
         return args -> repository.saveAll(
                 Arrays.asList(
                     new Message("User1", new Date(), "Example message"),

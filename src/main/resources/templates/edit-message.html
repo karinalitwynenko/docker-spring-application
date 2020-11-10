@@ -8,11 +8,11 @@
 <body>
     <form id="edit-message-form" th:action="@{/updatemessage/{id}(id=${message.id})}" th:object="${message}" method="post">
         <label for="userName">User name: </label>
-        <input id="userName" name="userName" th:field="*{userName}" >
+        <input id="userName" name="userName" th:field="*{userName}" class="edit-message-input">
         <label for="message">Message: </label>
-        <input id="message" name="messageText" th:field="*{messageText}" >
+        <input id="message" name="messageText" th:field="*{messageText}" class="edit-message-input">
         <label for="message">Date: </label>
-        <input id="date" name="dateToParse" type="date" th:value="${#dates.format(message.date, 'yyyy-MM-dd')}" >
+        <input id="date" name="dateToParse" type="date" th:value="${#dates.format(message.date, 'yyyy-MM-dd')}" class="edit-message-input">
 
         <input type="submit" value="update" class="form-item">
     </form>

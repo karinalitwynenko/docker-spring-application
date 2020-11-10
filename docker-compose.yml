@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   server:
-    build: .
+    image: karinalitwynenko/spring-mysql-application
     container_name: javaApp
     ports:
       - "8080:8080"
